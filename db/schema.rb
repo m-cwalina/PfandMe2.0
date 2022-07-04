@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_04_121250) do
+ActiveRecord::Schema.define(version: 2022_07_04_122751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appointments", force: :cascade do |t|
+    t.time "time"
+    t.date "date"
+    t.string "address"
+    t.bigint "user_id", null: false
+    t.bigint "picker_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["picker_id"], name: "index_appointments_on_picker_id"
+    t.index ["user_id"], name: "index_appointments_on_user_id"
+  end
 
   create_table "pickers", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -39,4 +51,6 @@ ActiveRecord::Schema.define(version: 2022_07_04_121250) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "appointments", "pickers"
+  add_foreign_key "appointments", "users"
 end
