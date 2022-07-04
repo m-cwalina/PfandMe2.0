@@ -57,3 +57,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # A gem for authentication
 gem 'devise'
+# A gem to create simple forms for post requests
+gem 'simple_form', github: 'heartcombo/simple_form'
