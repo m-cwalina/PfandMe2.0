@@ -8,7 +8,13 @@ class AppointmentsController < ApplicationController
     @user = current_user
     @appointment.user = @user
     @appointment.save
-    debugger
+    @picker = Picker.within(5, origin: [@appointment.latitude, @appointment.longitude]).first
+    @appointment.picker = @picker
+    if @appointment.save
+      redirect_to appointment_path(@appointment)
+    else
+      render :new
+    end
   end
 
   def show
