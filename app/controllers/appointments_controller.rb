@@ -3,4 +3,8 @@ class AppointmentsController < ApplicationController
     @user = current_user
     @appointment = Appointment.new
   end
+
+  def create
+
+  end
 end
