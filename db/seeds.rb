@@ -7,14 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts "Destroy all PICKERS..."
-Pickers.destroy_all
+Picker.destroy_all
 
 puts 'Creating more pickers (phew)...'
 
 Picker.create([
-  {"name": "Tim Gregor", "phone": "01773168274", "longitude": 13.4155, "latitude": 52.5276},
-  {"name": "Jans Schneider", "phone": "01373165274", "longitude": 13.3289, "latitude": 52.5037},
-  {"name": "Maxi Friedrich", "phone": "01373165277", "longitude": 13.3379, "latitude": 52.5056},
-  {"name": "Andy Smith", "phone": "02773162579", "longitude": 13.3943, "latitude": 52.5125},
-  {"name": "Tom Zappia", "phone": "06332168244", "longitude": 13.3914, "latitude": 52.5069}
+  {"email": "Tim.Gregor@gmail.com", "password": "123456", "name": "Tim Gregor", "phone": "01773168274", "longitude": 13.4155, "latitude": 52.5276},
+  {"email": "Jans.Schneider@gmail.com", "password": "123456", "name": "Jans Schneider", "phone": "01373165274", "longitude": 13.3289, "latitude": 52.5037},
+  {"email": "Maxi.Friedrich@gmail.com", "password": "123456", "name": "Maxi Friedrich", "phone": "01373165277", "longitude": 13.3379, "latitude": 52.5056},
+  {"email": "Andy.Smith@gmail.com", "password": "123456", "name": "Andy Smith", "phone": "02773162579", "longitude": 13.3943, "latitude": 52.5125},
+  {"email": "Tom.Zappia@gmail.com", "password": "123456", "name": "Tom Zappia", "phone": "06332168244", "longitude": 13.3914, "latitude": 52.5069}
 ])
