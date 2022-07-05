@@ -8,6 +8,7 @@ class AppointmentsController < ApplicationController
     @user = current_user
     @appointment.user = @user
     @appointment.save
+    debugger
   end
 
   def show
