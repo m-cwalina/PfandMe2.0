@@ -8,7 +8,7 @@ class AppointmentsController < ApplicationController
     @user = current_user
     @appointment.user = @user
     @appointment.save
-    @picker = Picker.within(5, origin: [@appointment.latitude, @appointment.longitude]).first
+    @picker = Picker.within(1, origin: [@appointment.latitude, @appointment.longitude]).last
     @appointment.picker = @picker
     if @appointment.save
       redirect_to appointment_path(@appointment)
