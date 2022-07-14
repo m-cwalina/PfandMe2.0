@@ -19,6 +19,12 @@ class AppointmentsController < ApplicationController
 
   def show
     @appointment = Appointment.find(params[:id])
+    @markers = @appointment.geocode.map do |appointment|
+      {
+        #lat: appointment.latitude,
+        #lng: appointment.longitude
+      }
+    end
   end
 
   private

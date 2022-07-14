@@ -66,3 +66,6 @@ gem "geocoder"
 
 #A gem to find distances between two points
 gem 'geokit-rails'
+
+#A gem file to hide API keys
+gem 'dotenv-rails'
