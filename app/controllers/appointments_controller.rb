@@ -21,8 +21,15 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.find(params[:id])
     @markers = @appointment.geocode.map do |appointment|
       {
-        #lat: appointment.latitude,
-        #lng: appointment.longitude
+        lat: @appointment.latitude,
+        lng: @appointment.longitude
+      }
+    end
+    @picker = @appointment.picker
+    @markers = @picker.geocode.map do |picker|
+      {
+        lat: @picker.latitude,
+        lng: @picker.longitude
       }
     end
   end
