@@ -1,12 +1,12 @@
 <div class="container">
   <h1>Recent Orders</h1>
-  <% current_user.appointments.each do |appointment| %>
-    <p><%= appointment.date %></p>
-    <p><%= appointment.picker.name  %></p>
-    <p><%= appointment.bottle %></p>
+  <% @past_orders.each do |order| %>
+    <p><%= order.date %></p>
+    <p><%= order.picker.name  %></p>
+    <p><%= order.bottle %></p>
   <% end %>
 </div>
 <div class="container">
   <h1>Bottles Donated</h1>
-  <%=current_user.appointments.sum(:bottle)%>
+  <%= @bottles %>
 </div>
