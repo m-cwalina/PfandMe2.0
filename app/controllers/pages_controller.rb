@@ -8,10 +8,10 @@ class PagesController < ApplicationController
     # Assigning current_user to instance variable @user
     @user = current_user
     # Finding the current user with appoinments in the range of the last 30 days
-    @past_orders = User.find_by(id: current_user).appointments.where(date: Date.today - 30.day...Date.today)
+    @past_orders = current_user.appointments.where(date: Date.today - 30.day...Date.today)
     # Finding the current users with appointments bottles and summing them up
-    @bottles = User.find_by(id: current_user).appointments.sum(:bottle)
+    @bottles = current_user.appointments.sum(:bottle)
     # Calculating the amount one donated from bottles
-    @amount = (@bottles * 0.15)
+    @amount = (@bottles * 0.15).to_f
   end
 end
