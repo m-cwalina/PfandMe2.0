@@ -1,6 +1,9 @@
-<%= simple_form_for @appointment do |f| %>
-    <%= f.input :address, label: 'Address' %>
-    <%= f.date_field :date, label: "Date" %>
-    <%= f.input :time, input_html: { class: 'special'}, label: "Choose a time" %>
-    <%= f.submit "Donate", class: "btn btn-primary" %>
-<% end %>
+<div class ='container'>
+  <%= simple_form_for @appointment do |f| %>
+      <%= f.input :address, label: 'Address' %>
+      <%= f.date_field :date, label: "Please pick a Date" %>
+      <%= f.input :time, label: "Choose a time" %>
+      <%= f.input :bottle, label: "How many bottles" %>
+      <%= f.submit "Donate", class: "btn btn-primary" %>
+  <% end %>
+</div>

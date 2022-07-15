@@ -1,8 +1,16 @@
-<h1>Hi <%= @appointment.user.name %>!</h1>
-<h1>Your bottles will be picked up by <%= @appointment.picker.name %></h1>
-<div style="width: 100%; height: 600px;"
-  data-controller="map"
-  data-map-markers-value="<%= @markers1.to_json %>"
-  data-map-markers-value2="<%= @markers2.to_json %>"
-  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="container">
+<h1>Order Confirmation</h1>
+  <p><%=@appointment.user.name %></p>
+  <p><%= @appointment.address %></p>
+  <p><%=@appointment.date  %>
+  <p><%=@appointment.time  %></p>
+  <p><%=@appointment.bottle %></p>
+</div>
+<div class="container">
+  <h3>Your bottles will be picked up by <%= @appointment.picker.name %></h1>
+  <div style="width: 100%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
 </div>
