@@ -1,8 +1,13 @@
 <div class="page-container">
   <div class="navbar">
-    <a><%=link_to 'About', about_path%></a>
-    <a><%=link_to 'Contact', contact_path%></a>
-    <a><%=link_to 'Sign In', new_user_session_path%></a>
+    <div class="navbar-logo">
+      <%= image_tag "bottle.png", class: "bottle-image"%>
+    </div>
+    <div class="navbar-links">
+      <a><%=link_to 'About', about_path%></a>
+      <a><%=link_to 'Contact', contact_path%></a>
+      <a><%=link_to 'Sign In', new_user_session_path%></a>
+    </div>
   </div>
   <h1>PfandMe</h1>
   <h3>Donate your Pfand & get those pesky bottles out of your office or flat!</h3>
@@ -18,6 +23,50 @@
     </div>
     <div class="image-container">
       <%= image_tag "Bicycle.png", class: "bicycle-image"%>
+    </div>
+  </div>
+  <div class="step-title">
+    <h2>How it works</h2>
+  </div>
+  <div class="flex-container">
+    <div class="steps">
+      <div class="steps-flex-container">
+          <h4>Sign Up and fill out the form.</h4>
+          <%= image_tag "step-one.png", class: "step-one-image"%>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="steps-flex-container">
+        <h4>Wait for your bottles to be picked up</h4>
+        <%= image_tag "step-two.png", class: "step-two-image"%>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="steps-flex-container">
+        <h4>It's that easy!</h4>
+        <%= image_tag "step-three.png", class: "step-three-image"%>
+      </div>
+    </div>
+  </div>
+  <div class="flex-container">
+      <div class="image-container">
+        <%= image_tag "disclaimer.png", class: "disclaimer-image"%>
+      </div>
+    <div class="idea-container">
+      <h2>Disclaimer</h2>
+      <h4>This is a project to showcase my programming skills. Please read the 'about' for more detailed information. </h4>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-links">
+      <a href="https://github.com/m-cwalina/PfandMe2.0"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/in/matthew-cwalina/><i class="fab fa-linkedin"></i></a>
+    </div>
+    <div class="footer-copyright">
+      Created with Ruby on Rails & Javascript
     </div>
   </div>
 </div>

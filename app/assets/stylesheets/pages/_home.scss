@@ -32,6 +32,7 @@ h2 {
   font-size: 50px;
   font-weight: 700;
   color: $White;
+  text-align: center;
 }
 
 h4 {
@@ -53,4 +54,28 @@ h4 {
 .bicycle-img {
   margin-top: 150px;
   text-align: center;
+}
+
+.step-title {
+  margin-top: 150px;
+  margin-bottom: 100px;
+}
+
+.steps {
+  width: 33%;
+  text-align: center;
+}
+
+.step-one-image {
+  height: 260px;
+}
+
+.step-three-image {
+  height: 257px;
+}
+
+.step-flex-container {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
 }

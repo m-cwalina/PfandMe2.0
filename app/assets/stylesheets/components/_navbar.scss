@@ -2,6 +2,7 @@
   background-color: $Dark-Green;
   overflow: hidden;
   justify-content: right;
+  display: flex;
 }
 
 .navbar a {
@@ -12,4 +13,13 @@
   text-decoration: none;
   font-size: 20px;
   font-weight: 900;
+}
+
+.navbar-logo {
+  margin-right: 980px;
+}
+
+.bottle-image {
+  height: 50px;
+  width: 25px;
 }
