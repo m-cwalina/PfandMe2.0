@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :appointments
-  # devise_scope :user do
-    # get "/dashboard", to: "pages#dashboard"
-  # end
   get "/dashboard", to: "pages#dashboard"
+  get "/about", to: "pages#about"
+  get "/contact", to: "pages#contact"
 end
