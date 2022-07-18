@@ -1,7 +1,13 @@
 class PagesController < ApplicationController
-  before_action :authenticate_user!, except: :home
+  before_action :authenticate_user!, except: [:home, :about, :contact]
 
   def home
+  end
+
+  def about
+  end
+
+  def contact
   end
 
   def dashboard
