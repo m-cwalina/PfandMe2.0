@@ -5,17 +5,19 @@
     <a><%=link_to 'Sign In', new_user_session_path%></a>
   </div>
   <h1>PfandMe</h1>
-  <%=link_to new_user_registration_path do %>
-    <div type="button" class="btn btn-primary">Sign Up</div>
-  <% end %>
-
-  <%= link_to destroy_user_session_path do %>
-    <div type="button" class="btn btn-primary">Sign Out</div>
-  <% end %>
-  <%= link_to new_appointment_path do %>
-    <div type="button" class="btn btn-primary">Donate Bottles</div>
-  <% end %>
-  <%=link_to new_user_registration_path do %>
-    <div type="button" class="btn btn-primary">Join Us</div>
-  <% end %>
+  <h3>Donate your Pfand & get those pesky bottles out of your office or flat!</h3>
+  <div class="sign-up-button text-center">
+    <%=link_to new_user_registration_path do %>
+      <div type="button" class="btn btn-outline-light btn-lg">Sign Up</div>
+    <% end %>
+  </div>
+  <div class="flex-container">
+    <div class="idea-container">
+      <h2>The Idea</h2>
+      <h4> The idea for this App came to me from the need to clean my apartment, get rid of my bottles fast, and feel good about doing so. This app lets you donate your Pfand to someone who needs it, while someone picks it up for you. An all around good prospect for every user and the environment.
+    </div>
+    <div class="image-container">
+      <img class="scooter-img" src="https://www.citypng.com/public/uploads/preview/png-vector-scooter-delivery-cartoon-illustration-11635937995pwnhh1fdq5.png" />
+    </div>
+  </div>
 </div>
