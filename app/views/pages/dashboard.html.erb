@@ -12,19 +12,19 @@
       <% @past_orders.each do |order| %>
         <div class="col-md-4 recent-orders">
           <div class="card-body">
-            <h4><%= order.date %></h4>
-            <h4><%= order.picker.name  %></h4>
-            <h4><%= order.bottle %></h4>
+            <h4><i class="fa-solid fa-calendar"></i> <%= order.date %></h4>
+            <h4><i class="fa-solid fa-signature"></i> <%= order.picker.name  %></h4>
+            <h4><i class="fa-solid fa-wine-bottle"></i> <%= order.bottle %></h4>
           </div>
         </div>
       <% end %>
     </div>
   <div class="container">
     <h1>Total Bottles Donated</h1>
-    <p><%= @bottles %></p>
+    <h4><%= @bottles %></h4>
   </div>
   <div class="container">
     <h1>Total Amount Donated</h1>
-    <p>$<%= @amount %>!</p>
+    <h4>$<%= @amount %>!</h4>
   </div>
 </div>
