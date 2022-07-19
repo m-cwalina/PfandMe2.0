@@ -1,21 +1,31 @@
-<div class="container">
-<h1>Order Confirmation</h1>
-  <p><%=@appointment.user.name %></p>
-  <p><%= @appointment.address %></p>
-  <p><%=@appointment.date  %>
-  <p><%=@appointment.time  %></p>
-  <p><%=@appointment.bottle %></p>
-</div>
-<div class="container">
-  <h3>Your bottles will be picked up by <%= @appointment.picker.name %></h1>
-  <div style="width: 100%; height: 600px;"
-    data-controller="map"
-    data-map-markers-value="<%= @markers.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+<div class="page-container">
+  <div class="order-title">
+    <h1>Order Confirmation</h1>
   </div>
-</div>
-<div class="container">
-<%=link_to dashboard_path do %>
-  <div type="button" class="btn btn-primary">Dashboard</div>
-<% end %>
+  <div class="order-confirmation">
+    <h4><i class="fa-solid fa-signature"></i> <%=@appointment.user.name %></h4>
+    <h4><i class="fa-solid fa-location-arrow"></i> <%= @appointment.address %></h4>
+    <h4><i class="fa-solid fa-calendar"></i> <%=@appointment.date  %></h4>
+    <h4><i class="fa-solid fa-business-time"></i> <%=@appointment.time  %></h4>
+    <h4><i class="fa-solid fa-wine-bottle"></i> <%=@appointment.bottle %> bottles</h4>
+  </div>
+  <div class="order-title">
+    <h1>Your collector</h1>
+  </div>
+  <div class="order-confirmation">
+    <h4><i class="fa-solid fa-bicycle"></i> <%= @appointment.picker.name %></h4>
+    <h4><i class="fa-solid fa-phone"></i> <%= @appointment.picker.phone %></h4>
+  </div>
+  <div class="container">
+    <div style="width: 100%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+  <div class="sign-up-button text-center">
+    <%=link_to dashboard_path do %>
+      <div type="button" class="btn btn-outline-light btn-lg">Go to Dashbaord</div>
+    <% end %>
+  </div>
 </div>

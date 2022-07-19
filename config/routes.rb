@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   get "/dashboard", to: "pages#dashboard"
   get "/about", to: "pages#about"
   get "/contact", to: "pages#contact"
+  # A route to root a sign in to his or hers dashboard
+  get '/user' => "pages#dashboard", :as => :user_root
 end

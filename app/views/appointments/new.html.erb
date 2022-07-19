@@ -1,9 +1,11 @@
-<div class ='container'>
+<div class ='form-container'>
   <%= simple_form_for @appointment do |f| %>
+    <div class="form-text">
       <%= f.input :address, label: 'Address' %>
       <%= f.date_field :date, label: "Please pick a Date" %>
       <%= f.input :time, label: "Choose a time" %>
       <%= f.input :bottle, label: "How many bottles" %>
-      <%= f.submit "Donate", class: "btn btn-primary" %>
+      <%= f.submit "Donate", class: "btn btn-outline-light btn-lg" %>
+    </div>
   <% end %>
 </div>

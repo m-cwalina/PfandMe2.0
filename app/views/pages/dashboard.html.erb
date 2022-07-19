@@ -1,16 +1,30 @@
-<div class="container">
-  <h1>Recent Orders</h1>
-  <% @past_orders.each do |order| %>
-    <p><%= order.date %></p>
-    <p><%= order.picker.name  %></p>
-    <p><%= order.bottle %></p>
-  <% end %>
-</div>
-<div class="container">
-  <h1>Total Bottles Donated</h1>
-  <p><%= @bottles %></p>
-</div>
-<div class="container">
-  <h1>Total Amount Donated</h1>
-  <p>$<%= @amount %>!</p>
+<div class="page-container">
+  <h1>Lets get started!</h1>
+  <div class="sign-up-button text-center">
+    <%=link_to new_appointment_path do %>
+      <div type="button" class="btn btn-outline-light btn-lg">Donate Bottles</div>
+    <% end %>
+  </div>
+  <div class="order-title">
+    <h1>Recent Orders</h1>
+  </div>
+    <div class="row row-cols-1 row-cols-md-3">
+      <% @past_orders.each do |order| %>
+        <div class="col-md-4 recent-orders">
+          <div class="card-body">
+            <h4><%= order.date %></h4>
+            <h4><%= order.picker.name  %></h4>
+            <h4><%= order.bottle %></h4>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <div class="container">
+    <h1>Total Bottles Donated</h1>
+    <p><%= @bottles %></p>
+  </div>
+  <div class="container">
+    <h1>Total Amount Donated</h1>
+    <p>$<%= @amount %>!</p>
+  </div>
 </div>
