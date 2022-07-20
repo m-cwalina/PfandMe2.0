@@ -8,23 +8,35 @@
   <div class="order-title">
     <h1>Recent Orders</h1>
   </div>
-    <div class="row row-cols-1 row-cols-md-3">
-      <% @past_orders.each do |order| %>
-        <div class="col-md-4 recent-orders">
-          <div class="card-body">
-            <h4><i class="fa-solid fa-calendar"></i> <%= order.date %></h4>
-            <h4><i class="fa-solid fa-signature"></i> <%= order.picker.name  %></h4>
-            <h4><i class="fa-solid fa-wine-bottle"></i> <%= order.bottle %></h4>
+    <% if @past_orders.any? %>
+      <div class="row row-cols-1 row-cols-md-3">
+        <% @past_orders.each do |order| %>
+          <div class="col-md-4 recent-orders">
+            <div class="card-body">
+              <h4><i class="fa-solid fa-calendar"></i> <%= order.date.to_s(:long_ordinal)%></h4>
+              <h4><i class="fa-solid fa-signature"></i> <%= order.picker.name  %></h4>
+              <h4><i class="fa-solid fa-wine-bottle"></i> <%= order.bottle %></h4>
+            </div>
           </div>
-        </div>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
+    <% else %>
+      <h4 class="text-center">You have no any past orders yet</h4>
+    <% end %>
   <div class="text-center">
     <h1>Total Bottles Donated</h1>
-    <h4 class="bottles-container"><%= @bottles %> bottles</h4>
+    <% if @bottles > 1 %>
+      <h4 class="bottles-container"><%= @bottles %> bottles</h4>
+    <% else %>
+      <h4 class="text-center">You have no bottles donated just yet</h4>
+    <% end %>
   </div>
   <div class="text-center">
     <h1>Total Amount Donated</h1>
+    <% if @amount > 0.01 %>
     <h4 class="bottles-container">$<%= @amount %>!</h4>
+    <% else %>
+      <h4 class="text-center">No amount yet</h4>
+    <% end %>
   </div>
 </div>

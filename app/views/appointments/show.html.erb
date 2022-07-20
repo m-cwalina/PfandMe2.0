@@ -5,8 +5,8 @@
   <div class="order-confirmation">
     <h4><i class="fa-solid fa-signature"></i> <%=@appointment.user.name %></h4>
     <h4><i class="fa-solid fa-location-arrow"></i> <%= @appointment.address %></h4>
-    <h4><i class="fa-solid fa-calendar"></i> <%=@appointment.date  %></h4>
-    <h4><i class="fa-solid fa-business-time"></i> <%=@appointment.time  %></h4>
+    <h4><i class="fa-solid fa-calendar"></i> <%=@appointment.date.to_s(:long_ordinal) %></h4>
+    <h4><i class="fa-solid fa-business-time"></i> <%=@appointment.time.strftime("%H:%M %p")  %></h4>
     <h4><i class="fa-solid fa-wine-bottle"></i> <%=@appointment.bottle %> bottles</h4>
   </div>
   <div class="order-title">

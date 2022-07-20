@@ -18,6 +18,6 @@ class PagesController < ApplicationController
     # Finding the current users with appointments bottles and summing them up
     @bottles = current_user.appointments.sum(:bottle)
     # Calculating the amount one donated from bottles
-    @amount = (@bottles * 0.15).to_f
+    @amount = (@bottles * 0.121).to_f
   end
 end
