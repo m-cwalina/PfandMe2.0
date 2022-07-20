@@ -2,8 +2,8 @@
   <%= simple_form_for @appointment do |f| %>
     <div class="form-text">
       <%= f.input :address, label: 'Address' %>
-      <%= f.date_field :date, label: "Please pick a Date" %>
-      <%= f.input :time, label: "Choose a time" %>
+      <%= f.date_field :date, min: Date.today, label: "Please pick a Date" %>
+      <%= f.input :time, min: Time.now, minute_step: 15, label: "Choose a time" %>
       <%= f.input :bottle, label: "How many bottles" %>
       <%= f.submit "Donate", class: "btn btn-outline-light btn-lg" %>
     </div>
