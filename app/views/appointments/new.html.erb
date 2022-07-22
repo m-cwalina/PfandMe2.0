@@ -3,9 +3,16 @@
     <div class="form-text">
       <%= f.input :address, label: 'Address' %>
       <%= f.date_field :date, min: Date.today, label: "Please pick a Date" %>
-      <%= f.input :time, min: Time.now, minute_step: 15, label: "Choose a time" %>
+      <%= f.input :time, minute_step: 15, label: "Choose a time" %>
       <%= f.input :bottle, label: "How many bottles" %>
       <%= f.submit "Donate", class: "btn btn-outline-light btn-lg" %>
     </div>
   <% end %>
+  <div class="text-center">
+    <% if @appointment.errors.any? %>
+      <% @appointment.errors.full_messages.each do |message| %>
+        <h4><%= message %></h4>
+      <% end %>
+    <% end %>
+  </div>
 </div>

@@ -8,8 +8,6 @@
 
 puts "Destroy all PICKERS..."
 Picker.destroy_all
-User.destroy_all
-Appointment.destroy_all
 
 puts 'Creating more pickers (phew)...'
 
