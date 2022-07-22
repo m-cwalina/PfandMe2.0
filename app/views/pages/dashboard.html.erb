@@ -1,12 +1,31 @@
 <div class="page-container">
   <h1>Lets get started!</h1>
-  <div class="sign-up-button text-center">
-    <%=link_to new_appointment_path do %>
-      <div type="button" class="btn btn-outline-light btn-lg">Donate Bottles</div>
-    <% end %>
-  </div>
+    <div class="sign-up-button text-center">
+      <%=link_to new_appointment_path do %>
+        <div type="button" class="btn btn-outline-light btn-lg">Donate Bottles</div>
+      <% end %>
+    </div>
   <div class="order-title">
-    <h1>Recent Orders</h1>
+    <h1>Current Order</h1>
+  </div>
+    <% if @current_orders.any? %>
+      <div class="row row-cols-1 row-cols-md-1 align-center">
+        <% @current_orders.each do |order| %>
+          <div class="col-md-4 recent-orders">
+            <div class="card-body">
+              <h4><i class="fa-solid fa-calendar"></i> <%= order.date.to_s(:long_ordinal)%></h4>
+              <h4><i class="fa-solid fa-business-time"></i> <%=order.time.strftime("%H:%M %p")  %></h4>
+              <h4><i class="fa-solid fa-signature"></i> <%= order.picker.name  %></h4>
+              <h4><i class="fa-solid fa-wine-bottle"></i> <%= order.bottle %></h4>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <h4 class="text-center">You have no current orders</h4>
+    <% end %>
+  <div class="order-title">
+    <h1>Past Orders</h1>
   </div>
     <% if @past_orders.any? %>
       <div class="row row-cols-1 row-cols-md-3">
