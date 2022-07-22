@@ -1,1 +1,78 @@
-<h4>This project is used with Ruby, PosgreSQL, Ruby on Rails, Stimulus, Javascript and HTML/CSS. The concept of the application is to connect a user with a collector automatically based on distance.</h4>
+<div class="page-container">
+  <div class="title-container">
+    <h1>Summary</h1>
+  </div>
+  <div class="summary-container">
+    <h4>This application let's a user create an appointment for his or her's pfand (recycle) to be collected. The process is automatic with certain validations to be meet. The user story is straight forward. Create a post, have an employee matched with you based on certain critea (distance), then have the amount of bottles collected at the determined location.</h4>
+  </div>
+
+  <div class="title-container">
+    <h1 class="text-center">Current Tech Stack</h1>
+  </div>
+  <div class="summary-container">
+      <h4>- Ruby</h4>
+      <h4>- Ruby on Rails</h4>
+      <h4>- Javascript</h4>
+      <h4>- Stimulus</h4>
+      <h4>- HTML/CSS</h4>
+      <h4>- PostgreSQL</h4>
+      <h4>- Yarn</h4>
+      <h4>- Webpacker</h4>
+  </div>
+  <div class="title-container">
+    <h1>Gems</h1>
+  </div>
+  <div class="gem-container">
+    <h4>Devise: This gem allows for user authentication</h4>
+    <h4>Simple_form: A gem to create easy forms to post information into database</h4>
+    <h4>Geocoder: This gem takes a users address and determines the locations longitude and latitude</h4>
+    <h4>geokit-rails: A gem that calculates the distance between two locations using longitude and latitude</h4>
+    <h4>dotenv-rails: A gem to hide API keys in a .env file</h4>
+  </div>
+
+  <div class="title-container">
+    <h1>Database Schema</h1>
+  </div>
+  <div class="photo-container">
+    <%= image_tag "Database-Schema.png", class: "database-image"%>
+  </div>
+
+  <div class="title-container">
+    <h1>Models</h1>
+  </div>
+  <div class="photo-container">
+    <%= image_tag "Appointment-Model.png", class: "database-image"%>
+  </div>
+  <div class="summary-photo-container">
+    <h4>This model has a validation to make sure appointments are only created at most 5 days into the future. Another business logic validation is a user can have only a minumum of 5 bottles per appointment. This table connects users and pickers with foreign keys</h4>
+  </div>
+  <div class="photo-container">
+    <%= image_tag "User-Model.png", class: "database-image"%>
+  </div>
+  <div class="summary-photo-container">
+    <h4>This model has a enum role because with devise the user can have roles to determine if a user is a customer or employee. This will be more valuable in the next version of PfandMe2.0</h4>
+  </div>
+
+  <div class="title-container">
+    <h1>Controllers</h1>
+  </div>
+  <div class="photo-container">
+    <%= image_tag "Appointments-Controller.png", class: "database-image"%>
+  </div>
+  <div class="summary-photo-container">
+    <h4>The most interesting controller. The create method is finding an appointment id in URL (thanks rails), setting that appointment to an instance variable @appointment. Then calling .user on @appointment and set it to equal the current_user (thanks devise). The appointment is then saved so gem geocode can take the address and calculate the longitude and latitude. Thanks to geokit-rails one can find an instance of Picker within 1 mile of the origin of the appointment just created. We save that @picker to the @appointment to create an appointment automatically with a @picker</h4>
+  </div>
+    <div class="photo-container">
+      <%= image_tag "Pages-Controller.png", class: "database-image"%>
+    </div>
+  <div class="summary-photo-container">
+    <h4>This controller is mostly making ActiveRecord queries. I'm finding @current_orders where a date is less then a Date.today and a week afterwards. This is due because someone can create an appointment with a date one week in advance. @past_orders are appointments that are appointments that occurred within a range of a month ago. @bottles is finding the sum of all the bottles of that appointment and @amount is calculating the total by multiplying bottles X a fixed amount.</h4>
+  </div>
+
+  <div class="title-container">
+    <h1>Further</h1>
+  </div>
+  <div class="summary-photo-container">
+    <h4>This application is still being worked upon. I am creating an employees (someone who picks up the bottles) user story. The application will be using React.js for the employees story which means I will also be creating an API with Rails. For more information please find this application on my <a href="https://github.com/m-cwalina/PfandMe2.0">GitHub</a>.</h4>
+  </div>
+</div>
