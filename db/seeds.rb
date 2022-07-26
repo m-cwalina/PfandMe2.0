@@ -28,6 +28,3 @@ puts 'Creating more pickers (phew)...'
   {"email": "Andy.Smith@gmail.com", "password": "123456", "name": "Andy Smith", "phone": "02773162579", "address": "Hauptstraße 15, 10317 Berlin"},
   {"email": "Tom.Zappia@gmail.com", "password": "123456", "name": "Tom Zappia", "phone": "06332168244", "address": "Kantstraße 143, 10623 Berlin"}
 ])
-
-# -*- encoding: utf-8 -*-
-# stub: bundler 2.3.18 ruby lib
