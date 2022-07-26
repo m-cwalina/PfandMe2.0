@@ -69,6 +69,3 @@ gem 'geokit-rails'
 
 #A gem file to hide API keys
 gem 'dotenv-rails'
-
-gem "rake", "~> 13.0"
-gem 'rexml', '~> 3.2', '>= 3.2.4'

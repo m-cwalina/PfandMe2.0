@@ -11,8 +11,16 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @pickers = Picker.all
+    @markers = @pickers.geocoded.map do |picker|
+      {
+        lat: picker.latitude,
+        lng: picker.longitude
+      }
+    end
+
     @user = current_user
-    @current_orders = current_user.appointments.where('date <= ?', Date.today + 7.days)
+    @current_orders = current_user.appointments.where('date <= ?', Date.today)
     # Finding the current user with appoinments in the range of the last 30 days
     @past_orders = current_user.appointments.where(date: Date.today - 30.day...Date.today)
     # Finding the current users with appointments bottles and summing them up

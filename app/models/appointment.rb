@@ -11,8 +11,8 @@ class Appointment < ApplicationRecord
                    :lng_column_name => :longitude
 
   def date_amount
-    if date.present? && date > Date.today + 7.days
-      errors.add(:date, 'cannot be more then 7 days into the future')
+    if date.present? && date > Date.today
+      errors.add(:date, 'needs to be today')
     end
   end
 end
