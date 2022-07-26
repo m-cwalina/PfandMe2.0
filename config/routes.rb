@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :appointments
   get "/dashboard", to: "pages#dashboard"
+  get "/employee_dashboard", to: "pages#employee_dashboard"
   get "/about", to: "pages#about"
   get "/contact", to: "pages#contact"
   # A route to root a sign in to his or hers dashboard
