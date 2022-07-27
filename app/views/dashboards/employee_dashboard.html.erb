@@ -1,1 +1,31 @@
-<h1>You fucking did it!</h1>
+<h1>Hello <%= @user.name %></h1>
+
+<div class="order-title"><h3>Your collections today</h3></div>
+  <% if @appointments.any? %>
+    <div class="row row-cols-1 row-cols-md-1 align-center">
+      <% @appointments.each do |appointment| %>
+        <div class="col-md-4 collector-orders">
+          <div class="card-body">
+            <h4><i class="fa-solid fa-calendar"></i> <%= appointment.date.to_s(:long_ordinal)%></h4>
+            <h4><i class="fa-solid fa-business-time"></i> <%=appointment.time.strftime("%H:%M %p")%></h4>
+            <h4><i class="fa-solid fa-location-arrow"></i> <%= appointment.address%></h4>
+            <h4><i class="fa-solid fa-signature"></i> <%= appointment.user.name%></h4>
+            <h4><i class="fa-solid fa-wine-bottle"></i> <%= appointment.bottle%></h4>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <h4 class="text-center">You have no current orders</h4>
+  <% end %>
+
+<h3>Collection locations</h3>
+<% if @appointments.any? %>
+  <div class="map-container" style="width: 50%; height: 600px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+<% else %>
+  <h4>You have no bottle collections today</h4>
+<% end %>
