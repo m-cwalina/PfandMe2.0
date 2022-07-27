@@ -8,5 +8,10 @@ Rails.application.routes.draw do
   get "/about", to: "pages#about"
   get "/contact", to: "pages#contact"
   # A route to root a sign in to his or hers dashboard
-  get '/user' => "pages#dashboard", :as => :user_root
+  devise_scope :user do
+    get '/user' => 'pages#dashboard', :as => :user_dashboard
+  end
+  devise_scope :picker do
+    get '/picker' => 'pages#dashboard', :as =>:picker_dashboard
+  end
 end
