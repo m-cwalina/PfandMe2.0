@@ -12,6 +12,6 @@ Rails.application.routes.draw do
     get '/user' => 'pages#dashboard', :as => :user_dashboard
   end
   devise_scope :picker do
-    get '/picker' => 'pages#dashboard', :as =>:picker_dashboard
+    get '/picker' => 'pages#dashboard', :as => :picker_dashboard
   end
 end
