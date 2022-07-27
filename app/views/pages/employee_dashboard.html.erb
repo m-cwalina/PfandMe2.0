@@ -1,6 +1,6 @@
 <% if @user.employee? %>
   <h1>Hello <%= @user.name %></h1>
-  <h4>Your collections today</h4>
+  <h3>Your collections today</h3>
   <% if @appointments.any? %>
     <div class="map-container" style="width: 50%; height: 600px;"
       data-controller="map"

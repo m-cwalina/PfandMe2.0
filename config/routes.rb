@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :pickers
-  devise_for :users
+  devise_for :pickers, path: 'pickers'
+  devise_for :users, path: 'users'
   root to: 'pages#home'
   resources :appointments
   get "/dashboard", to: "pages#dashboard"

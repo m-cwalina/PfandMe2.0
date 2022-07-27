@@ -17,7 +17,7 @@
     <h4><i class="fa-solid fa-phone"></i> <%= @appointment.picker.phone %></h4>
   </div>
   <div class="container">
-    <div style="width: 100%; height: 600px;"
+    <div class="map-container" style="width: 80%; height: 600px;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">

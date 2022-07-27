@@ -20,11 +20,11 @@ Picker.create!([
   { "email": "Tom.Zappia@gmail.com", "password": "123456", "name": "Tom Zappia", "phone": "06332168244", "address": "Kantstraße 143, 10623 Berlin" }
 ])
 
-User.create!([
-  { "email": "Tim.Gregor@gmail.com", "password": "123456", "name": "Tim Gregor", "number": "01773168274", "address": "Kurfürstendamm 26, 10719 Berlin", "role": 'employee' },
-  { "email": "Jans.Schneider@gmail.com", "password": "123456", "name": "Jans Schneider", "number": "01373165274", "address": "Schöneberger Str. 16, 10963 Berlin", "role": 'employee' },
-  { "email": "Sam.Richin@gmail.com", "password": "123456", "name": "Sam Richin", "number": "01373165277", "address": "Friedrichstrasse 96, 10117 Berlin", "role": 'employee' },
-  { "email": "Maxi.Friedrich@gmail.com", "password": "123456", "name": "Maxi Friedrich", "number": "01373165277", "address": "Am Wriezener bhf, 10243 Berlin", "role": 'employee' },
-  { "email": "Andy.Smith@gmail.com", "password": "123456", "name": "Andy Smith", "number": "02773162579", "address": "Hauptstraße 15, 10317 Berlin", "role": 'employee' },
-  { "email": "Tom.Zappia@gmail.com", "password": "123456", "name": "Tom Zappia", "number": "06332168244", "address": "Kantstraße 143, 10623 Berlin", "role": 'employee' }
-])
+# User.create!([
+#  { "email": "Tim.Gregor@gmail.com", "password": "123456", "name": "Tim Gregor", "number": "01773168274", "address": "Kurfürstendamm 26, 10719 Berlin", "role": 'employee' },
+#  { "email": "Jans.Schneider@gmail.com", "password": "123456", "name": "Jans Schneider", "number": "01373165274", "address": "Schöneberger Str. 16, 10963 Berlin", "role": 'employee' },
+#  { "email": "Sam.Richin@gmail.com", "password": "123456", "name": "Sam Richin", "number": "01373165277", "address": "Friedrichstrasse 96, 10117 Berlin", "role": 'employee' },
+#  { "email": "Maxi.Friedrich@gmail.com", "password": "123456", "name": "Maxi Friedrich", "number": "01373165277", "address": "Am Wriezener bhf, 10243 Berlin", "role": 'employee' },
+#  { "email": "Andy.Smith@gmail.com", "password": "123456", "name": "Andy Smith", "number": "02773162579", "address": "Hauptstraße 15, 10317 Berlin", "role": 'employee' },
+#  { "email": "Tom.Zappia@gmail.com", "password": "123456", "name": "Tom Zappia", "number": "06332168244", "address": "Kantstraße 143, 10623 Berlin", "role": 'employee' }
+# ])
