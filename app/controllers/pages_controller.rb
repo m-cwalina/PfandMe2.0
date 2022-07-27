@@ -12,7 +12,7 @@ class PagesController < ApplicationController
 
   def dashboard
     # This is used to map all pickers on map
-    @pickers = Picker.all
+    @pickers = User.where(role: 'employee').all
     @markers = @pickers.geocoded.map do |picker|
       {
         lat: picker.latitude,
@@ -33,6 +33,13 @@ class PagesController < ApplicationController
 
   def employee_dashboard
   @user = current_user
+  @appointments = Appointment.where(user_id: params[current_user])
+    @markers = @appointments.geocoded.map do |appointment|
+      {
+        lat: appointment.latitude,
+        lng: apointment.longitude
+      }
+    end
   end
 
 end
