@@ -1,9 +1,13 @@
 <% if @user.employee? %>
   <h1>Hello <%= @user.name %></h1>
   <h4>Your collections today</h4>
-  <div class="map-container" style="width: 50%; height: 600px;"
+  <% if @appointments.any? %>
+    <div class="map-container" style="width: 50%; height: 600px;"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
+  <% else %>
+    <h4>You have no bottle collections today</h4>
+  <% end %>
 <% end %>
