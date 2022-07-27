@@ -4,14 +4,13 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :appointments
   get "/dashboard", to: "pages#dashboard"
-  get "/employee_dashboard", to: "pages#employee_dashboard"
   get "/about", to: "pages#about"
   get "/contact", to: "pages#contact"
-  # A route to root a sign in to his or hers dashboard
+  # A route to root a sign in to his or hers dashboard as employee or customer
   devise_scope :user do
     get '/user' => 'pages#dashboard', :as => :user_dashboard
   end
   devise_scope :picker do
-    get '/picker' => 'pages#dashboard', :as => :picker_dashboard
+    get '/employee' => 'dashboards#employee_dashboard', :as => :employee_dashboard
   end
 end

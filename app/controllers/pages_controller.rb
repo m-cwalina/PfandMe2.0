@@ -30,15 +30,4 @@ class PagesController < ApplicationController
     # Finding the amount of donations by multiplying the bottles with an arbitrary set price per bottle
     @amount = (@bottles * 0.121).to_i
   end
-
-  def employee_dashboard
-    @user = current_user
-    @appointments = Appointment.all
-    @markers = @appointments.geocoded.map do
-      {
-        lat: @appointment.latitude,
-        lng: @appointment.longitude
-      }
-    end
-  end
 end
