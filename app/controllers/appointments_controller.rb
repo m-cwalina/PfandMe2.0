@@ -9,7 +9,7 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new(appointment_params)
     @appointment.user = current_user
     @appointment.save
-    @picker = Picker.within(1, origin: [@appointment.latitude, @appointment.longitude]).first
+    @picker = Picker.within(10, origin: [@appointment.latitude, @appointment.longitude]).first
     @appointment.picker = @picker
     if @appointment.save
       redirect_to appointment_path(@appointment)

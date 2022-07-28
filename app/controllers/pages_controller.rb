@@ -21,10 +21,10 @@ class PagesController < ApplicationController
     end
     # Setting the current_user helper to @user instance variable
     @user = current_user
-    # An ActiveRecord SQL query to find appointments where the date is less than or equal to todays date
-    @current_orders = current_user.appointments.where('date = ?', Date.today)
+    # An ActiveRecord SQL query to find appointments where the status is still in_progress
+    @current_orders = current_user.appointments.where(status: 'in_progress')
     # Finding the current user with appoinments in the range of the last 30 days
-    @past_orders = current_user.appointments.where(date: Date.today - 30.day...Date.today)
+    @past_orders = current_user.appointments.where(status: 'completed')
     # Finding the current users with appointments bottles and summing them up
     @bottles = current_user.appointments.sum(:bottle)
     # Finding the amount of donations by multiplying the bottles with an arbitrary set price per bottle
