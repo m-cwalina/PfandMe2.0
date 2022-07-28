@@ -7,7 +7,7 @@ class User < ApplicationRecord
   acts_as_mappable :lat_column_name => :latitude,
                    :lng_column_name => :longitude
   enum role: [:customer, :employee]
-  after_initialize :set_default_role, if: :new_record?
+  # after_initialize :set_default_role, if: :new_record?
 
   def set_default_role
     self.role ||= :customer

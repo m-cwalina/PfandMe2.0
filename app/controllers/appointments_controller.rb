@@ -1,5 +1,5 @@
 class AppointmentsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:update]
 
   def new
     @appointment = Appointment.new
@@ -28,9 +28,16 @@ class AppointmentsController < ApplicationController
     end
   end
 
+  def update
+    @appointment = Appointment.find(params[:id])
+    @appointment.status = "completed"
+    @appointment.save
+    redirect_to employee_dashboard_path
+  end
+
   private
 
   def appointment_params
-    params.require(:appointment).permit(:address, :time, :date, :bottle)
+    params.require(:appointment).permit(:address, :time, :date, :bottle, :status)
   end
 end
