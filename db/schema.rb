@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2022_07_27_173232) do
     t.float "longitude"
     t.integer "bottle"
     t.decimal "amount"
-    t.integer "status"
+    t.integer "status", default: 0
     t.index ["picker_id"], name: "index_appointments_on_picker_id"
     t.index ["user_id"], name: "index_appointments_on_user_id"
   end
