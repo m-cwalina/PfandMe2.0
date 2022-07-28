@@ -23,10 +23,10 @@ Picker.create!([
   { "email": "Chris.Danger@gmail.com", "password": "123456", "name": "Chris Danger", "phone": "08564738293", "address": "Karl-Marx-Straße 66, 12043 Berlin" },
   { "email": "House.Gregory@gmail.com", "password": "123456", "name": "Gregory House", "phone": "09578832115", "address": "Gleimstraße 55, 10437 Berlin" },
   { "email": "Willy.Wilson@gmail.com", "password": "123456", "name": "Willy Wilson", "phone": "09854423254", "address": "Kurfürstendamm 161a, 10709 Berlin" },
-  { "email": "Willy.Wilson@gmail.com", "password": "123456", "name": "Katie Slymer", "phone": "07493991234", "address": "Turmstraße 39, 10551 Berlin" },
-  { "email": "Willy.Wilson@gmail.com", "password": "123456", "name": "Rick Overall", "phone": "09443375890", "address": "Mühlenstraße 5, 10243 Berlin" },
-  { "email": "Willy.Wilson@gmail.com", "password": "123456", "name": "Michael Mendell", "phone": "09032436654", "address": "Böhmische Str. 43, 12055 Berlin" },
-  { "email": "Willy.Wilson@gmail.com", "password": "123456", "name": "Jonas Matter", "phone": "02557852191", "address": "Greifswalder Str. 50, 10405 Berlin" },
-  { "email": "Willy.Wilson@gmail.com", "password": "123456", "name": "Gabriela Rodriquez", "phone": "06558943421", "address": "Karl-Liebknecht-Str. 30, 10178 Berlin" },
-  { "email": "Willy.Wilson@gmail.com", "password": "123456", "name": "Lizzy Maguire", "phone": "09345654532", "address": "Ackerstraße 136, 13355 Berlin" }
+  { "email": "Katie.Sylmer@gmail.com", "password": "123456", "name": "Katie Slymer", "phone": "07493991234", "address": "Turmstraße 39, 10551 Berlin" },
+  { "email": "Rick.Overall@gmail.com", "password": "123456", "name": "Rick Overall", "phone": "09443375890", "address": "Mühlenstraße 5, 10243 Berlin" },
+  { "email": "Michael.Mendell@gmail.com", "password": "123456", "name": "Michael Mendell", "phone": "09032436654", "address": "Böhmische Str. 43, 12055 Berlin" },
+  { "email": "Jonas.Matter@gmail.com", "password": "123456", "name": "Jonas Matter", "phone": "02557852191", "address": "Greifswalder Str. 50, 10405 Berlin" },
+  { "email": "Gabriela.Rodriquez@gmail.com", "password": "123456", "name": "Gabriela Rodriquez", "phone": "06558943421", "address": "Karl-Liebknecht-Str. 30, 10178 Berlin" },
+  { "email": "Lizzy.Maguire@gmail.com", "password": "123456", "name": "Lizzy Maguire", "phone": "09345654532", "address": "Ackerstraße 136, 13355 Berlin" }
 ])
