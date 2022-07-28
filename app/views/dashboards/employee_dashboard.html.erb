@@ -11,7 +11,9 @@
             <h4><i class="fa-solid fa-location-arrow"></i> <%= appointment.address%></h4>
             <h4><i class="fa-solid fa-signature"></i> <%= appointment.user.name%></h4>
             <h4><i class="fa-solid fa-wine-bottle"></i> <%= appointment.bottle%></h4>
-            <%= button_to 'Complete', appointment_path(appointment), method: :patch, data: { controller: :sweetalert, action: "sweetalert#fire", sweetalert_pending_value: true, id: appointment.id}, class: "btn btn-outline-light" %>
+            <div class="text-center">
+              <%= button_to 'Complete', appointment_path(appointment), method: :patch, data: { controller: :sweetalert, action: "sweetalert#fire", sweetalert_pending_value: true, id: appointment.id}, class: "btn btn-outline-light" %>
+            </div>
           </div>
         </div>
       <% end %>
