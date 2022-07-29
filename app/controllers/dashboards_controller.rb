@@ -1,5 +1,5 @@
 class DashboardsController < ApplicationController
-  # before_action :authenticate_picker!
+  before_action :authenticate_picker!
 
   def employee_dashboard
     @user = current_picker
