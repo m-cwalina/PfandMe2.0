@@ -10,6 +10,6 @@ class DashboardsController < ApplicationController
         lng: appointment.longitude
       }
     end
+    @bottles = current_picker.appointments.sum(:bottle)
   end
-
 end
