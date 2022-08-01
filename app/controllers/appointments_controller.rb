@@ -26,6 +26,13 @@ class AppointmentsController < ApplicationController
         lng: @appointment.longitude
       }
     end
+    @picker = @appointment.picker
+    @collector = @picker.geocode.map do
+      {
+        lat: @picker.latitude,
+        lng: @picker.longitude
+      }
+    end
   end
 
   def update

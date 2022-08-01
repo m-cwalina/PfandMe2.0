@@ -19,10 +19,10 @@
         <% end %>
       </div>
     <% else %>
-      <h4 class="no-container text-center">You have no current orders</h4>
+      <h4 class="collector-orders">You have no current orders</h4>
     <% end %>
 
-  <h3>Collection locations</h3>
+  <h3 class="dashboard-titles">Collection locations</h3>
   <% if @appointments.any? %>
     <div class="map-container" style="width: 50%; height: 600px;"
       data-controller="map"
@@ -30,12 +30,13 @@
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
   <% else %>
-    <h4 class="no-container text-center">You have no bottle collections today</h4>
+    <h4 class="collector-orders">You have no bottle collections today</h4>
   <% end %>
-  <h3>Bottles Collected</h3>
+
+  <h3 class="dashboard-titles">Bottles Collected</h3>
   <% if @bottles > 1 %>
-    <h4 class="no-container text-center"><%= @bottles %></h4>
+    <h4 class="collector-orders"><%= @bottles %></h4>
   <% else %>
-    <h4 class="no-container text-center">You have no bottle collections today</h4>
+    <h4 class="collector-orders">You have no bottle collections today</h4>
   <% end %>
 </div>
